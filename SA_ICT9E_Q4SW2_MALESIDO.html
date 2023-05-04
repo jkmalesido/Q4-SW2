@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	<title>Read the Sky | SW#2</title>
+	<style type="text/css">
+		body{
+			background-color: #F8E9CF;
+		}
+		nav{
+			background-color: #CCF2EF;
+		}
+		.navbar{
+			position: fixed;
+			top: 0;
+		}
+		.container-fluid, div{
+			background-color: #CCF2EF;
+		}
+		h2{
+			text-align: left;
+		}
+		h2, .nav-link, h4, p, h1, h3, th, td, label, button{
+			color: black;
+			font-family: 'Roboto Mono', monospace;
+		}
+		th, td, h3{
+			text-align: center;
+		}
+		.search-container{
+  			float: right;
+		  	padding: 6px 10px;
+			margin-top: 8px;
+			margin-right: 16px;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+		}
+		.date{
+			border-color: #000000;
+			border-style: double;
+			border-width: thick;
+			padding: 6px 10px;
+			margin-top: 8px;
+			margin-left: 250px;
+			margin-right: 250px;
+		}
+		.conversion{
+			border-color: #000000;
+			border-style: double;
+			border-width: thick;
+			padding: 6px 10px;
+			margin-top: 8px;
+			margin-left: 350px;
+			margin-right: 350px;
+		}
+		.div2{
+			border-color: #000000;
+			border-style: dashed;
+			border-width: thick;
+		}
+		.th1{
+			font-size: 25px;
+		}
+		h4{
+			font-size: 30px;
+		}
+		.th2, .th3, .th4, p, label{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md container-fluid">
+	<a class="navbar-brand col-5" href="#"><img align="left" src="https://img.freepik.com/free-icon/rain_318-868461.jpg?w=2000" height="10%" width="10%"><h2>Read the Sky</h2></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div>
+    <form>
+      <input type="text" placeholder="Type here..." name="search">
+      <button type="submit"><i class="fa fa-search">Search</i></button>
+    </form>
+  	</div>
+	<div class="collapse under navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a href="#" class="nav-link">About Us</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link">Today's Forecast</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link">Contact Us</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="btn btn-success"><img src="https://cdn.iconscout.com/icon/free/png-256/free-find-jobs-1956265-1650428.png" height="35" width="35">APPLY NOW!</a>
+			</li>
+		</ul>
+	</div>
+	</nav>
+	<br><br><br><br><br>
+	<center>
+		<div class="date">
+		<center>
+		<h4>Today is...</h4>
+		<p id="today"></p>
+		<script type="text/javascript">
+			const date = new Date();
+			document.getElementById('today').innerHTML = date;
+		</script>
+		</center>
+	</div>
+	</center>
+
+	<br><br>
+	<center>
+		<h1><img src="https://uxwing.com/wp-content/themes/uxwing/download/medical-science-lab/low-temperature-icon.png" height="3%" width="3%"> Converting Temperature <img src="https://cdn-icons-png.flaticon.com/512/6740/6740814.png" height="5.5%" width="5.5%"></h1>
+
+		<div class="conversion">
+			<p class="input">Input:</p>
+			<label>(In Fahrenheit)</label>
+			<input type="number" name="input" id="input"><br>
+			<button type="submit" class="convert-button btn-success" id="convert" onclick="Compute()">Convert!</button>
+		</div>
+
+		<br><br>
+		<div class="container div2">
+			<table class="table table-bordered">
+				<thead align="center">
+					<tr>
+						<th colspan="3" class="th1">Formulas for Conversion (Celsius & Fahrenheit):</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th class="th2">Fahrenheit (°F)</th>
+					<th class="th3">Celsius (°C)</th>
+					<th class="th4">Description</th>
+				</tr>
+				<tr>
+					<td>-459.67</td>
+					<td>-273.15</td>
+					<td>Absolute zero temperature</td>
+				</tr>
+				<tr>
+					<td>32.0</td>
+					<td>0</td>
+					<td>Freezing/melting point of water</td>
+				</tr>
+				<tr>
+					<td>69.8</td>
+					<td>21</td>
+					<td>Room temperature</td>
+				</tr>
+				<tr>
+					<td>98.6</td>
+					<td>37</td>
+					<td>Average body temperature</td>
+				</tr>
+				<tr>
+					<td>212.0</td>
+					<td>100</td>
+					<td>Boiling point of water</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</center>
+
+	<script type="text/javascript">
+		function Compute() {
+			var input = document.getElementById("input").value;
+			var multiplication = (input - 32) * 5/9;
+			window.alert("Celsius measurement: " + multiplication + "\n");
+		}
+	</script>
+
+	<br><br>
+	<center>
+	<div class="container-fluid">
+	<h3>Follow us on social media to get the latest updates!</h3>
+	<a href="https://www.facebook.com/"><img align="center" src="https://i.pinimg.com/originals/ca/3b/f0/ca3bf05cfab74677e5b73b130bd30991.png" width="5%" height="10%"></a>
+	<a href="https://www.instagram.com/"><img align="center" src="https://cdn-icons-png.flaticon.com/512/1400/1400829.png" width="5%" height="10%"></a>
+	<a href="https://twitter.com/"><img align="center" src="https://i.pinimg.com/originals/5f/d0/53/5fd0537ef0cbf9efd48c975209f74a8c.png" width="5%" height="10%"></a>
+	<a href="https://www.tiktok.com/"><img align="center" src="https://seeklogo.com/images/T/tiktok-share-icon-black-logo-29FFD062A0-seeklogo.com.png" width="5%" height="10%" class="tiktok"></a>
+	</div>
+	</center>
+
+	<!-- References:
+	IconScout Store (n.d.). "Free Find Jobs in Colored Outline Style." IconScout.com. Retrieved from https://iconscout.com/icon/find-jobs-1956265.
+
+	"High Temperature Free Icon." (n.d.). Flaticon.com. Retrieved from https://www.flaticon.com/free-icon/high-temperature_6740814.
+
+	"Low Temperature icon PNG and SVG Free Download." (n.d.). Uxwing.com. Retrieved from https://uxwing.com/low-temperature-icon/.
+	 -->
+
+</body>
+</html>
